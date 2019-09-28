@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FriendOrFoe
 {
@@ -9,14 +10,15 @@ namespace FriendOrFoe
         public static IEnumerable<string> FriendOrFoe(string[] names)
         {
             List<string> friend = new List<string>();
-            for (int i = 0; i < names.Length; i++)
-            {
-                if (names[i].Length <= 4)
-                {
-                    friend.Add(names[i]);
-                }
-            }
-            return friend;
+            //for (int i = 0; i < names.Length; i++)
+            //{
+            //    if (names[i].Length <= 4)
+            //    {
+            //        friend.Add(names[i]);
+            //    }
+            //}
+
+            return names.Where(name => name.Length <= 4);
         }
         public static void Main(string[] args)
         {
